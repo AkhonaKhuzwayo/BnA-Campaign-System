@@ -1,0 +1,10 @@
+import api from './client';
+export const getProfile = () => api.get('/employee/profile');
+export const updateProfile = (data) => api.put('/employee/profile', data);
+export const uploadDocument = (formData) => api.post('/employee/documents', formData, { headers: { 'Content-Type': 'multipart/form-data' } });
+export const getDocuments = () => api.get('/employee/documents');
+export const clockIn = () => api.post('/clock/in');
+export const clockOut = () => api.post('/clock/out');
+export const getClockStatus = () => api.get('/clock/status');
+export const uploadPhotos = (formData) => api.post('/activations/photos', formData, { headers: { 'Content-Type': 'multipart/form-data' } });
+export const submitActivation = (data) => api.post('/activations', data);

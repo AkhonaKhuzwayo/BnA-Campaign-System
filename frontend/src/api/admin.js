@@ -1,0 +1,17 @@
+import api from './client';
+export const getEmployees = (params) => api.get('/admin/employees', { params });
+export const getEmployee = (id) => api.get(`/admin/employees/${id}`);
+export const createEmployee = (data) => api.post('/admin/employees', data);
+export const updateEmployee = (id, data) => api.put(`/admin/employees/${id}`, data);
+export const getEmployeeDocuments = (id) => api.get(`/admin/employees/${id}/documents`);
+export const downloadDocument = (docId) => `/api/admin/documents/${docId}/download`;
+export const getLogs = (params) => api.get('/admin/logs', { params });
+export const getActivations = (params) => api.get('/admin/logs/activations', { params });
+export const getDailyReport = (date) => api.get('/admin/reports/daily', { params: { date } });
+export const getWeeklyReport = (startDate) => api.get('/admin/reports/weekly', { params: { startDate } });
+export const getMonthlyReport = (month) => api.get('/admin/reports/monthly', { params: { month } });
+export const downloadPDF = (date) => `/api/admin/reports/daily/pdf?date=${date}`;
+export const downloadExcel = (date) => `/api/admin/reports/daily/excel?date=${date}`;
+export const getCampaignsAdmin = () => api.get('/admin/campaigns');
+export const createCampaign = (data) => api.post('/admin/campaigns', data);
+export const updateCampaign = (id, data) => api.put(`/admin/campaigns/${id}`, data);
